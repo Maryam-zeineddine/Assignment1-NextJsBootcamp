@@ -27,7 +27,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <nav className="bg-gray-800 text-white p-4">
+          <h1 className="text-xl font-bold">Developer Community Platform</h1>
+        </nav>
+        {children}
+        <footer className="bg-gray-800 text-white p-4 mt-auto">
+          <p>&copy; 2024 Developer Community Platform. All rights reserved.</p>
+        </footer>
+      </body>
     </html>
   );
 }
