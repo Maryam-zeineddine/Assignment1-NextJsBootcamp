@@ -1,17 +1,30 @@
 import Link from 'next/link'
 import React from 'react'
 
-const communityCard = ({ name, slug, description, members }: { name: string, slug: string, description: string, members: number }) => {
-  return (
-    <div className=" border rounded-xl bg-white shadow-md rounded-lg p-6 mb-4 space-y-2">
-        <h2 className='text-xl font-semibold'>{name}</h2>
-        <p className='text-gray-500'>{slug}</p>
-        <p className='text-gray-700'>{description}</p>
-        <p className='text-blue-500 font-medium'>{members} members</p>
+type Props = {
+  name: string,
+  slug: string,
+  description: string,
+  members: number
+}
 
-        <Link href={`/communities/${slug}`} className='text-blue-500 hover:underline'>View Community</Link>
-    </div>
+const CommunityCard = ({ name, slug, description, members }: Props) => {
+  return (
+    <article className='overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'>
+      <div className='mb-4'>
+        <h2 className='text-xl font-semibold text-slate-950'>{name}</h2>
+        <p className='mt-1 text-sm uppercase tracking-[0.2em] text-slate-500'>{slug}</p>
+      </div>
+      <p className='mb-5 text-sm leading-6 text-slate-700'>{description}</p>
+      <div className='mb-5 text-sm font-medium text-slate-900'>{members} members</div>
+      <Link
+        href={`/communities/${slug}`}
+        className='inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-slate-700'
+      >
+        View Community
+      </Link>
+    </article>
   )
 }
 
-export default communityCard
+export default CommunityCard

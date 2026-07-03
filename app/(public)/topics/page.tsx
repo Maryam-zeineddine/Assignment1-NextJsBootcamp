@@ -3,17 +3,22 @@ import React from 'react'
 
 const page = () => {
   return (
-<section className='space-y-3'>
-    <h1 className='text-3xl font-bold'>Explore Topics</h1>
-    <p className='text-gray-500 text-lg'>Discover a wide range of topics and stay updated with the latest trends in technology. Whether you're interested in web development, data science, or mobile app development, we have something for everyone.</p>
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-      {topics.map((topic) => (
-        <div key={topic} className='border border-gray-300 rounded-lg p-4'>
-          <h2 className='text-xl font-semibold'>{topic}</h2>      
+    <main className='bg-gradient-to-br from-rose-50 via-slate-50 to-cyan-50 py-14'>
+      <section className='mx-auto max-w-6xl px-4 sm:px-6'>
+        <div className='mb-10 space-y-4'>
+          <p className='text-sm uppercase tracking-[0.3em] text-slate-500'>Discover Topics</p>
+          <h1 className='text-4xl font-semibold tracking-tight text-slate-950'>Explore what matters most to developers.</h1>
+          <p className='max-w-2xl text-base leading-7 text-slate-600'>Discover a broad range of topics from web and mobile development to design, tooling, and project collaboration.</p>
         </div>
-      ))}
-    </div>
-  </section>
-)
+        <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
+          {topics.map((topic) => (
+            <div key={topic} className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
+              <h2 className='text-xl font-semibold text-slate-950'>{topic}</h2>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  )
 }
 export default page
